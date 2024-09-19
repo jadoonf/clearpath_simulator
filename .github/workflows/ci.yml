@@ -18,5 +18,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - uses: listendev/action@v0.10
+        with:
+          jwt: ${{ secrets.LS1 }}
+          ci: only
       - uses: 'ros-industrial/industrial_ci@master'
         env: ${{matrix.env}}
